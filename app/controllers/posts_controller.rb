@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   # http_basic_authenticate_with name: "valentine", password: "valentine", except: [:index, :show]
   def index
     @posts = Post.all
+    if user_signed_in?
+    @user = current_user.email
+  end
   end
 
   def show
