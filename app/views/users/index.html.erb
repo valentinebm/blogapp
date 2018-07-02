@@ -1,0 +1,8 @@
+<h1>Users</h1>
+<% @users.each do |user| %>
+<div class="well">
+    <h3><%= user.email %></h3>
+    <p><%= user.password %></p>
+    <%= link_to "Read More", post_path(user), :class => 'btn btn-default' %>
+</div>
+<% end %>

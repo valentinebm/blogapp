@@ -23,6 +23,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Users", users_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Create Post", new_post_path %></li>
@@ -43,7 +44,13 @@
 <div class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
+  <% if user_signed_in? %>
+  <p>Welcome
+    <%= @user %>!</p>
+    <% end %>
     <%= yield %>
+
 </div>
   </body>
 </html>
